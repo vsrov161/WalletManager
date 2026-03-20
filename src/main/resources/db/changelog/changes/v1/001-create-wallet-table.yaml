@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-wallets-table
+      author: Viktor Sergeev
+      labels: wallets-table
+      changes:
+        - createTable:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: balance
+                  type: bigint
+                  defaultValue: 0
+                  constraints:
+                    nullable: false
+      rollback:
+        - dropTable:
+            tableName: wallets
+            cascadeConstraints: true
