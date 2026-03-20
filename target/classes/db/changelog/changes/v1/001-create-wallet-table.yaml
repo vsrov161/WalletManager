@@ -16,7 +16,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: balance
-                  type: number(19, 2)
+                  type: numeric(19, 2)
                   defaultValueNumeric: 0
                   constraints:
                     nullable: false
