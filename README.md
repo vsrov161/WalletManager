@@ -10,7 +10,7 @@ docker run -d `
 --name wallet_db `
 -e POSTGRES_PASSWORD=root `
 -e POSTGRES_USER=postgres `
--e POSTGRES_DB=postgres `
+-e POSTGRES_DB=wallet_db `
 -p 5432:5432 `
 -v pgdata:/var/lib/postgresql/data `
 postgres:17
